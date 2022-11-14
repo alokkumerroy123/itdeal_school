@@ -6,6 +6,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\GeneralSettingController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\PermissionController;
+use App\Http\Controllers\Frontend\OnlineapplyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,12 @@ use App\Http\Controllers\PermissionController;
 Route::get('/', function () {
     return redirect()->route('login');
 });
+
+
+Route::get('/online_apply',[OnlineapplyController::class,'onlineapply'])->name('onlineapply');
+Route::post('/online_apply',[OnlineapplyController::class,'onlineapply_create']);
+Route::get('/transection',[OnlineapplyController::class,'transection'])->name('transection');
+Route::post('/transection',[OnlineapplyController::class,'transectionPost']);
 
 
 

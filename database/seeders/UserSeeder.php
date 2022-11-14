@@ -22,6 +22,7 @@ class UserSeeder extends Seeder
         $user->username = "rirrakib";
         $user->password = Hash::make('rirrakib');
         $user->is_active = true;
+        $user->branch_id = 1;
         $user->save();
 
 
